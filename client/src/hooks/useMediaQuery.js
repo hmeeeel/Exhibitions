@@ -1,0 +1,14 @@
+import { useSyncExternalStore } from 'react';
+
+/** Подписка на media query (внешняя система  - браузер), без собственного состояния. */
+export function useMediaQuery(query) {
+  return useSyncExternalStore(
+    (notify) => {
+      const media = window.matchMedia(query);
+      media.addEventListener('change', notify);
+      return () => media.removeEventListener('change', notify);
+    },
+    () => window.matchMedia(query).matches,
+    () => false,
+  );
+}

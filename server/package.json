@@ -1,0 +1,26 @@
+{
+  "name": "exhibitions-server",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Backend веб-приложения для организации выставок (этап 1)",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "db:init": "node src/scripts/dbInit.js",
+    "db:seed": "node src/scripts/dbSeed.js",
+    "import:cities": "node src/import/importCities.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "dotenv": "^18.0.10",
+    "express": "^5.3.0",
+    "pg": "^8.23.1",
+    "pino": "^10.4.0",
+    "pino-http": "^11.0.0",
+    "zod": "^4.6.7"
+  }
+}

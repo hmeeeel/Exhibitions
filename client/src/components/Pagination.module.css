@@ -1,0 +1,6 @@
+.pagination { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px; margin: 20px 0; }
+.pages { display: flex; flex-wrap: wrap; gap: 4px; margin: 0; padding: 0; list-style: none; }
+.page { min-width: 40px; min-height: 40px; padding: 0 8px; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; cursor: pointer; }
+.page:hover { background: #eef1f4; }
+.current { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
+.current:hover { background: var(--accent-dark); }

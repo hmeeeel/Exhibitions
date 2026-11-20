@@ -1,0 +1,20 @@
+.page { max-width: 1440px; margin: 0 auto; padding: 16px; }
+.title { margin-bottom: 16px; }
+.columns { display: grid; grid-template-columns: 1fr; gap: 20px; align-items: start; }
+.listColumn { min-width: 0; display: flex; flex-direction: column; gap: 12px; }
+.notice { margin: 0; padding: 10px 14px; background: var(--warn-soft); border-radius: 8px; }
+
+.viewToggle { display: flex; gap: 4px; padding: 4px; background: #e6eaef; border-radius: 10px; }
+.viewToggle button { flex: 1; min-height: 40px; border: 0; border-radius: 8px; background: transparent; cursor: pointer; font-weight: 600; }
+.viewToggle button[aria-pressed='true'] { background: var(--surface); box-shadow: var(--shadow); color: var(--accent-dark); }
+
+.mapColumn { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.counter { margin: 0; color: var(--muted); font-size: 0.9rem; }
+.mapBox { height: 70vh; min-height: 360px; overflow: hidden; border: 1px solid var(--border); border-radius: var(--radius); background: #e6eaef; }
+
+/* От 1200 px: слева фильтры и список, справа карта, закреплённая при прокрутке */
+@media (min-width: 1200px) {
+  .columns { grid-template-columns: minmax(520px, 5fr) 6fr; }
+  .mapColumn { position: sticky; top: calc(var(--header-height) + 16px); height: calc(100vh - var(--header-height) - 32px); }
+  .mapBox { flex: 1; height: auto; }
+}
